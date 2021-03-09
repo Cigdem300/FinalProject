@@ -1,5 +1,9 @@
+
+
+
 using Business.Abstract;
 using Business.Concrete;
+using Core.DependencyResolvers;
 using Core.Extensions;
 using Core.Utilities.IoC;
 using Core.Utilities.Security.Encryption;
@@ -40,7 +44,7 @@ namespace WebAPI
             services.AddControllers();
             //services.AddSingleton<IProductService,ProductManager>();
             //services.AddSingleton<IProductDal, EfProductDal>();
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            
 
 
 
@@ -61,7 +65,10 @@ namespace WebAPI
                     };
                 });
 
-            ServiceTool.Create(services);
+            services.AddDependencyResolvers(new ICoreModule[] { new CoreModule()
+            
+            });
+
 
            
         }
