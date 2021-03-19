@@ -148,6 +148,11 @@ namespace Business.Concrete
             return null;
 
         }
+
+        public IDataResult<List<Product>> GetAllByCategoryId(int categoryId)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
